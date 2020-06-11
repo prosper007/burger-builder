@@ -7,7 +7,7 @@ const modal = (props) => {
   const visibiliy = props.show ? classes.Show : classes.Hide;
   return (
     <Aux>
-      <Backdrop show={props.show} closeModal={props.closeModal} />
+      <Backdrop show={props.show} clicked={props.closeModal} />
       <div className={[classes.Modal, visibiliy].join(' ')}>
         {props.children}
       </div>
