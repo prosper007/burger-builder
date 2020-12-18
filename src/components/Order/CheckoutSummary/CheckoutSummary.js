@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './CheckoutSummary.css'
 import Burger from '../../Burger/Burger';
-import Button from '../../UI/Button/Button';
+// import Button from '../../UI/Button/Button';
 
 const checkoutSummary = (props) => {
   return (
@@ -10,7 +10,7 @@ const checkoutSummary = (props) => {
       <div className={classes.Burger}>
         <Burger ingredients={props.ingredients} />
       </div>
-      <Button
+      {/* <Button
         btnType="Danger"
         clicked={props.checkoutCancelled}
       >
@@ -21,7 +21,7 @@ const checkoutSummary = (props) => {
         clicked={props.checkoutContinued}
       >
         Continue
-      </Button>
+      </Button> */}
     </div>
   );
 }

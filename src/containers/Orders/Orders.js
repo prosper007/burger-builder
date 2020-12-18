@@ -19,6 +19,7 @@ class Orders extends Component {
           key={order.id}
           ingredients={order.ingredients}
           price={order.price}
+          isCurrUserOrder={order.userId === this.props.userId}
         />
       ))
     }

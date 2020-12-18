@@ -28,13 +28,13 @@ export class BurgerBuilder extends Component {
   }
 
   purchaseHandler = () => {
-    if (this.props.isAuth) {
-      this.setState({ purchasing: true });
-    } else {
-      this.props.onSetAuthRedirectPath('/checkout');
-      this.props.history.push('/auth');
-    }
-
+    this.setState({ purchasing: true });
+    // if (this.props.isAuth) {
+    //   this.setState({ purchasing: true });
+    // } else {
+    //   this.props.onSetAuthRedirectPath('/checkout');
+    //   this.props.history.push('/auth');
+    // }
   }
 
   purchaseCancelHandler = () => {
@@ -42,7 +42,7 @@ export class BurgerBuilder extends Component {
   }
 
   purchaseContinueHandler = () => {
-    this.props.history.push('/checkout');
+    this.props.history.push('/checkout/contact-data');
   }
 
   render() {
