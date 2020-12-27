@@ -4,11 +4,11 @@ import axios from '../../axios-orders';
 import Order from '../../components/Order/Order';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHanlder';
-import * as actions from '../../store/actions/index';
+import { fetchOrders } from '../../store/actions/index';
 
 class Orders extends Component {
   componentDidMount() {
-    this.props.onFetchOrders(this.props.token, this.props.userId);
+    this.props.fetchOrders(this.props.token, this.props.userId);
   }
 
   render() {
@@ -39,10 +39,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onFetchOrders: (token, userId) => dispatch(actions.fetchOrders(token, userId)),
-  }
+const mapDispatchToProps = {
+  fetchOrders,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Orders, axios));
